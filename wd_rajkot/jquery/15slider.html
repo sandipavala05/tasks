@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing: border-box;}
+        .slide1{display: none;}
+        /* img{vertical-align: middle;} */
+        .slideshow-container{
+            max-width: 1200px;
+            position: relative;
+            margin: auto;
+        }
+        .prev,.next{
+            cursor: pointer;
+            position: absolute;
+            width: auto;
+            font-size: 30px;
+            margin-top: -20px;
+            top: 50%;
+        }
+        .next{right: 0;}
+        .prev:hover,.next:hover{
+            background-color: white;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <div class="slide1">
+            <img src="img/slide1.jpg" alt="" style="width: 100%;">
+        </div>
+        <div class="slide1">
+            <img src="img/slide2.jpg" alt="" style="width: 100%;">
+        </div>
+        <div class="slide1">
+            <img src="img/slide3.jpg" alt="" style="width: 100%;">
+        </div>
+        <div class="slide1">
+            <img src="img/slide2.jpg" alt="" style="width: 100%;">
+        </div>
+        <a class="prev" onclick="plussllides(-1,0)">&#10094;</a>
+        <a class="next" onclick="plussllides(1,0)">&#10095;</a>
+    </div>
+</body>
+</html>
+<script>
+    let slideindex=[1];
+    let slideid =['slide1']
+    showSlides(1,0);
+    showSlides(1,1);
+    
+    function plussllides(n,no)
+    {
+        showSlides(slideindex[no]+=n,no);
+    }
+    function showSlides(n,no)
+    {
+        let i;
+        let x = document.getElementsByClassName(slideid[no]);
+        if(n > x.length)
+         {
+            slideindex[no]=1;
+         }
+
+         if(n<1)
+         {
+            slideindex[no]=x.length
+         }
+         for(i=0;i<x.length;i++)
+         {
+            x[i].style.display="none";
+         }
+         x[slideindex[no]-1].style.display = "block";
+    }
+</script>

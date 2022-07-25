@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#in').click(function(){
+                $('h1').fadeOut(2000);
+            })
+
+            $('#out').click(function(){
+                $('h2').fadeIn(2000);
+            })
+
+            $('#toggle').click(function(){
+                $('h3').fadeToggle(2000);
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>Fade out effect</h1>
+    <button id="in">Fade Out</button>
+    <br>
+    <h2 style="display:none ;">Fade in Effect</h2>
+    <button id="out">Fade In</button>
+    <br>
+    <h3>Fade in/out Effects</h3>
+    <button id="toggle">Fade In/Out</button>
+</body>
+</html>

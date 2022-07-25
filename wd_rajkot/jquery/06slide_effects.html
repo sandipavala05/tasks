@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#up').click(function(){
+                $('h1').slideUp(5000);
+            })
+            $('#down').click(function(){
+                $('h2').slideDown(5000);
+            })
+            $('#tgl').click(function(){
+                $('h3').slideToggle(5000);
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>Tops Tech</h1>
+    <button id="up">Slide up</button>
+    <br>
+    <h2 style="display: none;">Tops - Slide Down</h2>
+    <button id="down">Slide Down</button>
+    <br>
+    <h3>Slide Up/Down</h3>
+    <button id="tgl">Slide/Up/Down</button>
+</body>
+</html>
